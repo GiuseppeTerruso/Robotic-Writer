@@ -25,10 +25,10 @@ double d1 , d2; //delay small and long
 double zH , zC , xC; //keep up 
 //------------------------------------------------------------------------------------------
 
-void IKFW()
+void IKFW() // this function computes the inverse kinematics of the robot and applies the complience correction algorithms 
 {
    h=sqrt(pow(x,2)+pow(y,2));
-   zC = z + h/10 - 2 - 0.017*y; // This operation compensates the compliance of the arm's base as it move away from the center 
+   zC = z + h/10 - 2 - 0.017*y; // Compliance compensation of the arm's base as it move away from the center 
    if( y > 0 )  {  xC = x - 0.082*y;  } //{  xC = x - 0.0074*pow(y,2);  } 
    else  {  xC=x;  } 
    
